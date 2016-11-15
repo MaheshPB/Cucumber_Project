@@ -19,7 +19,6 @@ Given(/^I am a valid user$/) do
   @email = @data["customer_info"]["emailid"]
   @password = @data["customer_info"]["password"]
   @browser = init_browser_var
-
   sign_in(@email,@password)
   sleep 5
   @browser.div(id: 'closeButton').when_present.click
@@ -32,10 +31,10 @@ When(/^I select the Men's category$/) do
   sleep 5
   @item_list = @browser.div(id: 'row_106_4').text
   sleep 5
-  @items = @item_list.to_s.split()
-  @random_number = rand(0..2)
-  @selected_item = @items[@random_number]
-  puts @selected_item
+  @items = @item_list.to_s.split() #For converting the item list into array format
+  @random_number = rand(0..2) #random menthod for generating random index used in item selection
+  @selected_item = @items[@random_number] #selecting the item based on the random index generated
+  # puts @selected_item
 
 end
 
@@ -45,7 +44,7 @@ And(/^I select the desired item$/) do
 end
 
 When(/^I select an item category$/) do
-  # pending # Write code here that turns the phrase above into concrete actions
+
 end
 
 And(/^I add the item to the bag$/) do
@@ -53,14 +52,14 @@ And(/^I add the item to the bag$/) do
 end
 
 And(/^I enter the customer details$/) do
-  # pending # Write code here that turns the phrase above into concrete actions
+
 end
 
 Then(/^I should see the item is purchased$/) do
-  # pending # Write code here that turns the phrase above into concrete actions
+
 end
 
-
+# Menthod for user sign-in
 def sign_in(email,password)
   @browser.goto "https://www.macys.com/account/signin?cm_sp=navigation-_-top_nav-_-signin"
   @browser.text_field(id: 'email').when_present.set(email)

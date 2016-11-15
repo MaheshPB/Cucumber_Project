@@ -10,13 +10,11 @@ module Web_url
     @browser = Watir::Browser.new :'firefox'
   end
   def open_url_address
-    # sleep 5
     @browser.goto "http:macys.com"
   end
-#   @web_url_var = Web_url.load_env_url :'www.macys.com'
 
   def selection_of_item(item)
-    #For Coats and Jackets
+    #For selection of Coats
     puts item
     if item == "Coats"
       sleep 5
@@ -29,20 +27,12 @@ module Web_url
       @browser.button(id: 'addToBagButton2361618').when_present.click
       sleep 5
       @browser.img(id: 'btnCheckout').when_present.click
-      # sleep 5
-      # @browser.a(id: "shippingLink" ).when_present.click
       sleep 5
-      # @browser.button(id: 'intlContinueCheckout').when_present.click
       @browser.button(id: 'continueCheckout').when_present.click
       sleep 5
-      # @browser.text_field(id: 'password').when_present.set(password)
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
     end
 
-    #For Shoes
+    #For selection of Shoes
     if item == "Shoes"
       puts item
       sleep 5
@@ -55,20 +45,12 @@ module Web_url
       @browser.button(id: 'addToBagButton2361618').when_present.click
       sleep 5
       @browser.img(id: 'btnCheckout').when_present.click
-      # sleep 5
-      # @browser.a(id: "shippingLink" ).when_present.click
       sleep 5
-      # @browser.button(id: 'intlContinueCheckout').when_present.click
       @browser.button(id: 'continueCheckout').when_present.click
       sleep 5
-      # @browser.text_field(id: 'password').when_present.set(password)
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
     end
 
-
+    #For selection of Sweaters
     if item == "Sweaters"
       puts item
       sleep 5
@@ -84,20 +66,11 @@ module Web_url
       sleep 5
       @browser.img(id: 'm_atb_checkout').click
       sleep 5
-      # @browser.img(id: 'btnCheckout').when_present.click
-      # sleep 5
-      # @browser.a(id: "shippingLink" ).when_present.click
-      sleep 5
-      # @browser.button(id: 'intlContinueCheckout').when_present.click
       @browser.button(id: 'continueCheckout').when_present.click
       sleep 5
-      # @browser.text_field(id: 'password').when_present.set(password)
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
     end
 
+    #Below code is written for adjustmnet of item selection if "&" is encountered in random item selection
     if item == "&"
       sleep 5
       @browser.img(alt: 'Coats and Jackets').click
@@ -109,19 +82,12 @@ module Web_url
       @browser.button(id: 'addToBagButton2361618').when_present.click
       sleep 5
       @browser.img(id: 'btnCheckout').when_present.click
-      # sleep 5
-      # @browser.a(id: "shippingLink" ).when_present.click
       sleep 5
-      # @browser.button(id: 'intlContinueCheckout').when_present.click
       @browser.button(id: 'continueCheckout').when_present.click
       sleep 5
-      # @browser.text_field(id: 'password').when_present.set(password)
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
     end
 
+    ##For selection of Jackets
     if item == "Jackets"
       sleep 5
       @browser.img(alt: 'Coats and Jackets').click
@@ -133,17 +99,9 @@ module Web_url
       @browser.button(id: 'addToBagButton2361618').when_present.click
       sleep 5
       @browser.img(id: 'btnCheckout').when_present.click
-      # sleep 5
-      # @browser.a(id: "shippingLink" ).when_present.click
       sleep 5
-      # @browser.button(id: 'intlContinueCheckout').when_present.click
       @browser.button(id: 'continueCheckout').when_present.click
       sleep 5
-      # @browser.text_field(id: 'password').when_present.set(password)
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
-      # sleep 5
-      # @browser.a(id: "isWithoutProfile" ).when_present.click
     end
   end
 end

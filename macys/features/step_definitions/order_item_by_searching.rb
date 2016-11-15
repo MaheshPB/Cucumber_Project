@@ -1,7 +1,5 @@
 require 'yaml'
 include Web_url
-# require 'rexml/document'
-# include REXML
 require 'rubygems'
 require 'page-object'
 require 'Faker'
@@ -32,9 +30,7 @@ And(/^I select an item$/) do
 end
 
 And(/^I Add the item to Bag$/) do
-  # sleep 5
-  # @browser.li(title: '8').click
-  # @browser.button(id: 'addToBagButton1101219').when_present.click
+
 end
 
 And(/^I Add the item to my Bag$/) do
@@ -54,6 +50,8 @@ end
 And(/^I enter the custometr details$/) do
   include PageObject
   include DataMagic
+
+  #Faker method implemetation for generating random customer data
   @fname = Faker::Name.first_name
   @lname = Faker::Name.last_name
   @add_line1 = Faker::Address.street_address

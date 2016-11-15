@@ -12,18 +12,13 @@ end
 Then(/^I am on macys website$/) do\
    sleep 5
   @browser.div(id: 'closeButton').when_present.click
-  # find('a[id="closeButton"]').click
   sleep 5
   @browser.div(id: 'flexLabel_23930').click
 end
 
 Then(/^I click on Men's Watches link on the featured categories link$/) do
-  # sleep 5
-  # @browser.div(id: 'flexLabel_23930').click
-  # sleep 5
-  # @browser.img(alt: "Men's Watches").when_present.click
   @watch_type = "Men's Watches"
-  watch_selection(@watch_type)
+  watch_selection(@watch_type) #For selection of desired watch
 end
 
 Then(/^I click on the watch image$/) do
@@ -75,19 +70,12 @@ Then(/^I select the item from the display$/) do
 end
 
 Then(/^I add the item to cart$/) do
-  # sleep 5
-  # @browser.a(name: 'p2999458').when_present.click
-  # sleep 5
-  # @browser.li(title: 'S').click
-  # sleep 5
-  # @browser.button(id: 'addToBagButton2999458').click
   sleep 5
   select_item('p2915112','S','addToBagButton2951820')
 end
 
 And(/^I checkout the item$/) do
   sleep 5
-  # @browser.button(id: 'addToBagButton2951820').click
   @browser.a(id: 'shippingLink').when_present.click
   sleep 5
   @browser.button(id: 'intlContinueCheckout').when_present.click
@@ -97,17 +85,14 @@ And(/^I checkout the item$/) do
   @browser.a(id: 'isWithoutProfile').when_present.click
   sleep 5
   enter_cust_info('Mahesh','Bongale','BTM','Lane 1','Bangalore','123456','999999999')
-  # checkout_item('btnCheckout')
-  #
-  # @browser.button(id: 'continueCheckout').when_present.click
 end
 
 And(/^I submkit the transaction$/) do
 
 end
 
-#methods for implementation of step definitions
 
+#Method for writing the data to text fields
 def enter_cust_info(first_name,last_name,address_line1,address_line2,city,zip_code,phone_no)
   sleep 5
   @browser.text_field(id: 'rc-shipping-firstName').set(first_name)
@@ -140,8 +125,6 @@ end
 def select_item(item_number,size,tag)
   sleep 5
   @browser.a(name: item_number).when_present.click
-  # sleep 5
-  # @browser.li(title: size).click
   sleep 5
   @browser.button(id: tag).click
   sleep 5

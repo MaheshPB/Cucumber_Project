@@ -2,6 +2,7 @@ require 'page-object'
 # @browser = Watir::Browser.new :'firefox'
 
 class Customer_information
+  #method for writing the data to the text fields
   def enter_cust_info_1(first_name,last_name,address_line1,city,zip_code,phone_no)
     @browser = init_browser_var
     @browser.text_field(id: 'rc-shipping-firstName').when_present.set(first_name)
