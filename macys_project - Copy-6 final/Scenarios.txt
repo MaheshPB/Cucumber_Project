@@ -1,0 +1,30 @@
+
+Scenario: Ordering a new Item
+  Given I am on the Macys website
+  When I search for an item
+  And I get the list of items 
+  And I select an item
+  And I Add the item to Bag
+  And I checkout the item
+  And I enter the custometr details
+  Then the item is purchased
+
+Scenario: Ordering new item with discounted offers
+   Given I am on the Macys website
+   When I click on Shop now 
+   And I select the desired item
+   And I specify the color and the size
+   And I add it to the bag
+   And I will checkout an item
+   And I enter the customer details
+   Then the item is purchased 
+
+Scenario: Ordering an item with pop-up sale offer
+   Given I am on the Macys website
+   When I select the category of items
+   And I select the desired Item
+   And I specify the color and the size 
+   And I add to the bag
+   And I will check out the object
+   And I enter the customer details
+   Then the item is purchased

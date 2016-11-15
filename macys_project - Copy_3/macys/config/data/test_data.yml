@@ -1,0 +1,24 @@
+#information_page:
+#  first_name: Mahesh
+#  last_name: Bongale
+#  street: BTM
+#  city: Bangalore
+#  zip_code: 123456
+#  phone_number: 999999999
+#
+#
+item_selection:
+  element_id1: "1101219"
+  element_id2: "2861705"
+  element_id3: "2802983"
+  element_id4: "154649"
+  element_id5: "2334186"
+  element_id6: "2847917"
+  element_id7: "579294"
+  element_id8: "2316941"
+  element_id9: "1010089"
+  element_id10: "2753183"
+
+
+
+#  element_id: ({~random[1]
